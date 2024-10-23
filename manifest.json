@@ -1,6 +1,6 @@
 {
-  "name": "MyPDF",
-  "short_name": "My PDF",
+  "name": "PDF",
+  "short_name": "PDF",
   "start_url":".",
   "background_color": "#212429",
   "theme_color": "#212429",
