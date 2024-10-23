@@ -1,0 +1,11 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+.flex {display:flex; flex-direction:row;} .flex-column {display:flex; flex-direction:column;} .flex-center {display:flex; align-items:center; justify-content:center;}
+.w-40{width: 40%;} b{cursor:pointer;} b:hover{scale:1.3;}
+.app {position:relative; height:100vh; width:100vw; overflow:hidden; display:flex; flex-direction:row; justify-content:center; gap:1rem; }
+.page {position:absolute; width:100%; height:100%; display:flex; flex-direction:column; transition:0.3s;} 
+.page-hide {translate:0 50px; z-index:-2; opacity:0;}
+.mask {z-index:-5; opacity:0; transition: 0.3s;} .mask-show {z-index:9; opacity:1; background:rgba(0,0,0,0.7);}
+.msgbox {width:min(300px,50%); translate:0 50px; opacity:0; transition: 0.3s;} .msgbox-show {z-index:9; translate:0 -50px; opacity:1;}
+/* DROP AREA */
+.drop-area {flex-grow:1; width:100%; border: 4px dashed grey; border-radius:2rem; padding:1rem; }
+.drop-area-active {border-color:green; background:lightcyan;}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="he" dir="rtl" >
+<!-- <html lang="en"> -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#333">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touce-icon" href="./pics/logo192.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./src/style.css">
+  <script defer src="./src/pdf-lib.js"></script>
+  <script defer src="main.js"></script>
+  <title>My PDF</title>
+</head>
+<body data-bs-theme="dark">
+<div class="app">
+<!-- MAIN -->
+<div id="main-page" class="app">
+  <section class="w-40 m-3 p-3 border border-2 rounded-4">
+    <div class="m-3 py-2 border border-2 rounded-4 bg-body-tertiary flex-column flex-center">
+      <img src="./pics/logo.png" class="w-50"><i class="fs-4 fw-bolder text-center text-secondary-emphasis">Extract, Delete, Rotate<br><h4>Pages In Your PDF</h4></i>
+    </div><br>
+    <div class="my-3 gap-3 flex-center">
+      <span class="fw-medium" >טווח דפים:</span> 
+      <input id="pages-input" class="px-3 rounded-3 border-0 border-bottom" type="text" placeholder="למשל: 1, 3-5 ; 8"> 
+    </div>
+    <div class="d-flex p-3 gap-3 flex-center">
+      <button class="btn py-1 btn-outline-success col-3" onclick="_Pages('extract')">חלץ</button>
+      <button class="btn py-1 btn-outline-danger col-3" onclick="_Pages('delete')">מחק</button>
+      <!-- <button class="btn py-1 btn-outline-success col-3" onclick="Pages('split')">Split</button> -->
+    </div>
+    <div class="d-flex p-3 gap-3 flex-center text-info">
+      <span class="px-2 align-self-center fw-medium">סובב:</span>
+      <b class="bi-caret-right" style="font-size:2rem;" onclick="_Pages('rotate',90)"></b>
+      <b class="bi-caret-left" style="font-size:2rem;" onclick="_Pages('rotate',270)"></b>
+      <b class="bi-caret-down" style="font-size:2rem;" onclick="_Pages('rotate',180)"></b>
+      <b class="bi-caret-up" style="font-size:2rem;" onclick="_Pages('rotate',0)"></b>
+    </div>
+    <div class="flex-column w-75 m-auto p-2">
+      <label class="drop-area flex-column flex-center p-3 overflow-auto" for="inputfile" style="cursor: pointer;">
+        <b class="bi-cloud-arrow-up" style="font-size:4rem;"></b>
+        <p>העלה או גרור לכאן קובץ</p></label>
+      <input type="file" accept=".pdf" name="inputfile" id="inputfile" class="d-none" onchange="Load_File(this)">
+    </div>
+    <div class="flex-center mt-3"><a id="save-as-link" class="btn bg-primary py-1 d-none" onclick="_SaveAs()">שמור בשם</a></div>
+
+  </section>
+<!-- PDF FRAME -->
+  <section class="w-40 m-3 bg-body-tertiary border border-2 rounded-4 flex-center">
+    <h1 id="load-file-msg">טען קובץ PDF</h1>
+    <iframe id="pdf-frame" class="w-100 h-100 p-1 rounded-4 d-none"></iframe>
+  </section>
+</div>
+
+<!-- MSGBOX GENERAL -->
+<div id="msgbox" class="page mask flex-center">
+  <div class="msgbox flex-column rounded-4 bg-danger-subtle p-3" onclick="event.stopPropagation()">
+    <i id="msg-title" class="text-center fs-5">MsgBox Title</i>
+    <div id="msg-txt" class="text-center fs-6 my-3">Your message here</div>
+    <button class="btn bg-none align-self-end" onclick="Msgbox('','')">אישור</button>
+  </div>
+</div>
+
+
+
+</div>
+</body>
+</html>
