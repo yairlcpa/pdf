@@ -37,6 +37,8 @@ function _Pages(action, deg = 0) {
   else {
     if (action == "extract")
       New_Pdf(splitArr);
+    if (action == "reverse")
+      New_Pdf(splitArr.reverse());
     else if (action == "delete") {
       for (i in "_".repeat(pdfLength)) if (splitArr.indexOf(parseInt(i)) == -1) delArr.push(parseInt(i))
       New_Pdf(delArr);
