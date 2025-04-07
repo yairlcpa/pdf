@@ -27,18 +27,18 @@
       <input id="pages-input" class="px-3 rounded-3 border-0 border-bottom" type="text" placeholder="למשל: 1, 3-5 ; 8"> 
     </div>
     <div class="d-flex p-3 gap-3 flex-center">
-      <button class="btn py-1 btn-outline-success col-3" onclick="_Pages('extract')">חלץ</button>
+      <button class="btn py-1 btn-outline-primary col-3" onclick="_Pages('extract')">חלץ</button>
       <button class="btn py-1 btn-outline-danger col-3" onclick="_Pages('delete')">מחק</button>
-      <!-- <button class="btn py-1 btn-outline-success col-3" onclick="Pages('split')">Split</button> -->
+      <button class="btn py-1 btn-outline-success col-3" onclick="_Pages('reverse')">הפוך</button>
     </div>
     <div class="d-flex p-3 gap-3 flex-center text-info">
       <span class="px-2 align-self-center fw-medium">סובב:</span>
-      <b class="bi-caret-right" style="font-size:2rem;" onclick="_Pages('rotate',90)"></b>
-      <b class="bi-caret-left" style="font-size:2rem;" onclick="_Pages('rotate',270)"></b>
-      <b class="bi-caret-down" style="font-size:2rem;" onclick="_Pages('rotate',180)"></b>
-      <b class="bi-caret-up" style="font-size:2rem;" onclick="_Pages('rotate',0)"></b>
+      <span class="px-2 border rounded-2" onclick="_Pages('rotate',0)">&nbsp;0°&nbsp;</span>
+      <span class="px-2 border rounded-2" onclick="_Pages('rotate',90)">90°&nbsp;</span>
+      <span class="px-2 border rounded-2" onclick="_Pages('rotate',180)">180°</span>
+      <span class="px-2 border rounded-2" onclick="_Pages('rotate',270)">270°</span>
     </div>
-    <div class="flex-column w-75 m-auto p-2">
+    <div class="flex-column w-75 m-auto pt-5 pb-1" >
       <label class="drop-area flex-column flex-center p-3 overflow-auto" for="inputfile" style="cursor: pointer;">
         <b class="bi-cloud-arrow-up" style="font-size:4rem;"></b>
         <p>העלה או גרור לכאן קובץ</p></label>
@@ -62,8 +62,6 @@
     <button class="btn bg-none align-self-end" onclick="Msgbox('','')">אישור</button>
   </div>
 </div>
-
-
 
 </div>
 </body>
